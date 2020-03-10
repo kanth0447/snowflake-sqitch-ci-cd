@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Deploy changes') {
       steps {
-        withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake_creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
               sqitch deploy "db:snowflake://$USERNAME:$PASSWORD@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh"
               '''           
@@ -25,7 +25,7 @@ pipeline {
     }
     stage('Verify changes') {
       steps {
-        withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake_creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
               sqitch verify "db:snowflake://$USERNAME:$PASSWORD@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh"
               ''' 
