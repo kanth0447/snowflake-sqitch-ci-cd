@@ -18,12 +18,8 @@ pipeline {
       steps {
         withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
-<<<<<<< HEAD
               sqitch deploy "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=COMPUTE_WH"
-=======
-              sqitch deploy "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1/flipr?Driver=Snowflake;warehouse=COMPUTE_WH"
->>>>>>> e26097a223d267a9e49ecf038a7b314d9aa3b641
-              '''           
+             '''           
         }
       }
     }
@@ -31,12 +27,8 @@ pipeline {
       steps {
         withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
-<<<<<<< HEAD
               sqitch verify "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1.snowflakecomputing.com//flipr?Driver=Snowflake;warehouse=COMPUTE_WH"
-=======
-              sqitch verify "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1/flipr?Driver=Snowflake;warehouse=COMPUTE_WH"
->>>>>>> e26097a223d267a9e49ecf038a7b314d9aa3b641
-              ''' 
+             ''' 
         }
       }
     }      
