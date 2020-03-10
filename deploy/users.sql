@@ -1,7 +1,7 @@
 -- Deploy flipr:users to snowflake
 -- requires: appschema
 
-USE WAREHOUSE &warehouse;
+USE WAREHOUSE &COMPUTE_WH;
 CREATE TABLE flipr.users (
     nickname  TEXT         PRIMARY KEY,
     password  TEXT         NOT NULL,
