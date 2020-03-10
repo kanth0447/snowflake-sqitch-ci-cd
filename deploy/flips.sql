@@ -2,7 +2,7 @@
 -- requires: appschema
 -- requires: users
 
-USE WAREHOUSE &warehouse;
+USE WAREHOUSE &COMPUTE_WH;
 CREATE TABLE flipr.flips (
     id        INTEGER        PRIMARY KEY,
     nickname  TEXT           NOT NULL REFERENCES flipr.users(nickname),
