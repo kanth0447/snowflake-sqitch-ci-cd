@@ -1,4 +1,4 @@
 -- Deploy flipr:appschema to snowflake
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 CREATE SCHEMA flipr;

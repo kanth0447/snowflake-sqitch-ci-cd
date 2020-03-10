@@ -3,7 +3,7 @@
 -- requires: users
 -- requires: flips
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 CREATE OR REPLACE VIEW flipr.userflips AS
 SELECT f.id, u.nickname, u.fullname, u.twitter, f.body, f.timestamp
   FROM flipr.users u

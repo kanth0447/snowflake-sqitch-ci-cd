@@ -1,4 +1,4 @@
 -- Revert flipr:lists from snowflake
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 DROP TABLE flipr.lists;

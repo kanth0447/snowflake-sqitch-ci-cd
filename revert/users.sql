@@ -1,4 +1,4 @@
 -- Revert flipr:users from snowflake
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 DROP TABLE flipr.users;

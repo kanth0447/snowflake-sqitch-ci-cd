@@ -1,6 +1,6 @@
 -- Verify flipr:lists on snowflake
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 SELECT nickname, name, description, created_at
   FROM flipr.lists
  WHERE FALSE;

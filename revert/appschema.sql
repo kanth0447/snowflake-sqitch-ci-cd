@@ -1,4 +1,4 @@
 -- Revert flipr:appschema from snowflake
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 DROP SCHEMA flipr;

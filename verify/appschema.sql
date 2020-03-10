@@ -1,4 +1,4 @@
 -- Verify flipr:appschema on snowflake
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 CREATE TEMPORARY TABLE flipr.verify__ (id INT);

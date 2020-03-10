@@ -2,7 +2,7 @@
 -- requires: appschema
 -- requires: flips
 
-USE WAREHOUSE &COMPUTE_WH;
+USE WAREHOUSE &warehouse;
 CREATE TABLE flipr.lists (
     nickname    TEXT         NOT NULL REFERENCES flipr.users(nickname),
     name        TEXT         NOT NULL,
