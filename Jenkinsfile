@@ -4,7 +4,7 @@ pipeline {
   }
   agent {
     docker {
-      image 'hashmapinc/sqitch:snowflake-dev'
+      image 'hashmapinc/sqitch:jenkins'
       args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
     }
   }
@@ -18,7 +18,7 @@ pipeline {
       steps {
         withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
-              sqitch deploy "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1.snowflakecomputing.com/flipr?Driver=Snowflake"
+              sqitch deploy "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=COMPUTE_SH"
              '''           
         }
       }
@@ -27,7 +27,7 @@ pipeline {
       steps {
         withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
-              sqitch verify "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1.snowflakecomputing.com//flipr?Driver=Snowflake"
+              sqitch verify "db:snowflake://kanth0447:Kanth_957@cla38590.us-east-1.snowflakecomputing.com//flipr?Driver=Snowflake;warehouse=COMPUTE_SH"
              ''' 
         }
       }
