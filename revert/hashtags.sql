@@ -1,4 +1,4 @@
 -- Revert flipr:hashtags from snowflake
 
-USE WAREHOUSE &warehouse;
+USE WAREHOUSE &COMPUTE_WH;
 DROP TABLE flipr.hashtags;
